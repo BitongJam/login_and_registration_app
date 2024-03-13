@@ -1,0 +1,21 @@
+# Ignore Python virtual environment
+lra_backend-venv/
+venv/
+env/
+
+# Ignore database files
+db.sqlite3
+
+# Ignore static files
+staticfiles/
+
+# Ignore media files
+media/
+
+# Ignore IDE and text editor files
+.vscode/
+.idea/
+*.pyc
+
+# Ignore environment configuration files
+.env
