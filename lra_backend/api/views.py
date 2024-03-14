@@ -2,6 +2,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from base.models import Item
 from .serializers import ItemSerializers
+from rest_framework import status
+from django.shortcuts import get_object_or_404
 
 # @api_view(['GET'])
 # def getData(request):
@@ -26,3 +28,21 @@ def addItem(request):
     if serializer.is_valid():
         serializer.save()
     return Response()
+
+@api_view(['POST'])
+def updateItem(request,pk):
+    item = Item.objects.get(pk=pk)
+    data = ItemSerializers(instance=item,data=request.data)
+
+    if data.is_valid():
+        data.save()
+        return Response(data.data)
+    else:
+        return Response(status=status.HTTP_404_NOT_FOUND)
+    
+ 
+@api_view(['DELETE'])
+def deleteItem(request,pk):
+    item = get_object_or_404(Item, pk=pk)
+    item.delete()
+    return Response(status=status.HTTP_202_ACCEPTED)
