@@ -1,0 +1,49 @@
+.main{
+    margin:0;
+    height: 99vh; 
+    border: 1px solid red;
+    align-items: center;
+    display: flex;
+    
+}
+.section{
+    border: 1px solid green;
+    margin:auto;
+    width: 80%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    overflow: hidden;
+}
+.section-login{
+    border:1px solid blue;
+    height: 100%;
+    width: 100%;
+}
+.section-login form{
+    display: flex;
+    flex-direction: column;
+}
+input,button {
+    margin: 0.5rem 1rem;
+    font-size: 1rem;
+}
+
+.btn{
+    border-radius: 1rem;
+    border:0;
+    padding: 0.4rem;
+    background-color: #709ecc;
+    color: white;
+}
+.input{
+    padding: 0.1rem 1rem;
+}
+
+.section-signup{
+    border:1px solid green;
+    height: 100%;
+    width: 100%;
+}
